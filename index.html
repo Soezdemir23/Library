@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+    <!--The header is simple:
+        Title, info, add.
+        info tells us how many books are available
+        add is basically creating a modal where we can use a form to add the information.
+        Maybe a shadow
+    -->
+
+    <header>
+        <h1>Library</h1>
+        <div>
+            <button class="trigger">Press me for a modal</button>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3These></h3These >
+                    <form action="" method="post">
+                        <div>
+                            <label for="title">Book Title</label>
+                            <input type="text" name="title" id="title" min="1" required>
+                        </div>
+                        <div>
+                            <label for="author">Book Author</label>
+                            <input type="text" name="author" id="author" required>
+                        </div>
+                        <div>
+                            <label for="pages">Book Pages</label>
+                            <input type="number" name="pages" id="pages" required>
+                        </div>
+                        
+                        <div>
+                            <label for="yes">Is read</label>
+                            <input type="radio" name="yes" id="yes" value="yes">
+                        </div>
+                        <div>
+                            <label for="no">Not read</label>
+                            <input type="radio" name="no" id="no" value="no">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
