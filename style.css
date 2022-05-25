@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+html, body {
+    background-color: #7a6c5d;
+    color: #c17c74;
+    display: flex;
+    flex-direction: column;
+}
+/*header*/
+header{
+    margin-bottom: 20px;
+    box-shadow: #c17c74;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+
+}
+
+button {
+    background-color: #ddc9b4;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+button:active {
+    background-color: #bcac9b;
+}
 /*modal*/
 .modal {
     position: fixed;
@@ -49,3 +75,40 @@
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+.form {
+    top: 20px;
+}
+
+.form-items{
+    display: flex;
+    align-items: center;;
+}
+.form-items > label{
+    width: 100px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+}
+
+.trigger {
+    grid-column: 2/3;
+}
+
+.books-container {
+    padding: 1rem;
+    grid-column: 1/4;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.book {
+    background-color: #2a3d45;
+    padding: 0.5rem 2rem;
+    color: #ddc9b4;
+    border-radius: 16px;
+}
+
