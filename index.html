@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="./style.css">
@@ -25,7 +24,7 @@
                 <div class="modal-content">
                     <span class="close-button">&times;</span>
                 
-                    <form action="" method="post">
+                    <form  name="Book form">
                         <div class="form-items">
                             <label for="title">Book Title</label>
                             <input type="text" name="title" id="title" min="1" required>
@@ -41,13 +40,13 @@
                         
                         <div class="form-items">
                             <label for="yes">Is read</label>
-                            <input type="radio" name="yes" id="yes" value="yes">
+                            <input type="radio" name="read" id="yes" value="yes">
                         </div>
                         <div class="form-items">
                             <label for="no">Not read</label>
-                            <input type="radio" name="no" id="no" value="no">
-
+                            <input type="radio" name="read" id="no" value="no">
                         </div>
+                        <button class="submission" type="submit">Submit Entry</button>
                     </form>
                 </div>
             </div>
@@ -55,72 +54,9 @@
     </header>
     <!--Add new book and the books-->
     <section>
-        <button class="trigger">Add</button>
+        <button type="button" class="trigger">Add</button>
         <div class="books-container">
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-            </div>
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-            </div>
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-            </div>
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-            </div>
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-            </div>
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-            </div>
-            <div class="book">
-                <h4>Title</h4>
-                <p>The Hobbit</p>
-                <h4>Author</h4>
-                <p>J.J.R. tolkien</p>
-                <h4>Pages</h4>
-                <p>324</p>
-                <h4>Read</h4>
-                <p>Has been read</p>
-            </div>
+            
         </div>
     </section>
 </body>

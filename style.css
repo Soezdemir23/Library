@@ -22,12 +22,17 @@ h1 {
 
 }
 
-button {
+
+.trigger{
     background-color: #ddc9b4;
     padding: 1rem 2rem;
     font-size: 1.2rem;
+    justify-self:center;
+    border-radius: 16px;
+    border: none;
+    grid-column:2/3;
 }
-button:active {
+.trigger:active {
     background-color: #bcac9b;
 }
 /*modal*/
@@ -87,14 +92,21 @@ button:active {
     width: 100px;
 }
 
+.submission {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #bcac9b;   
+    border-radius: 16px;
+}
+
+.submission:active{
+    background-color: #ddc9b4;
+}
+/*vontent*/
 section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px 1fr;
-}
-
-.trigger {
-    grid-column: 2/3;
 }
 
 .books-container {
@@ -112,3 +124,22 @@ section {
     border-radius: 16px;
 }
 
+.remove {
+    background-color: #ddc9b4;
+    border-radius: 16px;
+    position: relative;
+    left: 10px;
+    padding: 0.5rem 1rem;
+    
+}
+.remove:active {
+    background-color: #c17c74;
+}
+
+.reading {
+    background-color: greenyellow;
+}
+
+.not-reading {
+    background-color: salmon;
+}
