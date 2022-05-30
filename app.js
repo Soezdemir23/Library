@@ -11,7 +11,6 @@ function Book(title, author, pages, read) {
         this.read = false
     }
 
-
     this.info = function () {
         return `${this.title}, by ${this.author}. ${this.pages} pages. ${(this.read)} `
     }
@@ -38,6 +37,7 @@ function addEntry(entries, event) {
     // create a new card for the container, set the class to book
     let bookCard = document.createElement("div")
     bookCard.className = "book"
+    bookCard.dataset.nr = myLibrary.length-1
 
     //create Elements that are the h4 and content of the h4
     let titleHeader = document.createElement("h4")
@@ -113,19 +113,36 @@ window.addEventListener("click", windowOnClick)
 // bookContainer 
 let bookContainer = document.querySelector(".books-container")
 /**
- * Detects if the current 
+ * removes the card an the entry , or uses it to change the read status back to the read status.
  * @param {mouse Event} event - Get the current remove button
  */
 bookContainer.onclick = function (event) {
     let clicked = event;
     // this is only triggered if the event.target.dataset.nr returns a valid result
-    if (typeof(event.target.dataset.nr) !== "undefined") {
+    console.log(clicked)
+    if (event.target.classList.contains("toggle")){
+        let index = event.target.closest(".book").dataset.nr
+        let book = myLibrary[parseInt(index)]
+        if (book.read === false){
+            book.read = true
+            event.target.classList.remove("not-reading")
+            event.target.classList.add("reading")
+            event.target.textContent = "reading"
+        } else if (book.read === true) {
+            book.read = false
+            event.target.classList.remove("reading")
+            event.target.classList.add("not-reading")
+            event.target.textContent = "not reading"
+        }
+    }
+    else if (event.target.classList.contains("remove")) {
         // let it be the number we use ti remive the 
-        let removeCardIndex = event.target.dataset.nr
+        let bookCard = event.target.closest(".book")
+        let index = bookCard.dataset.nr
         // remove the entry from the front
-        bookContainer.removeChild(event.target.closest(".book"))
+        bookContainer.removeChild(bookCard)
         // remove it from the back
-        let book = myLibrary.splice(removeCardIndex, 1)
+        let book = myLibrary.splice(index, 1)
         console.log(book)
         // go through each card item and rewrite the new information
         let bookCarditems = document.querySelectorAll(".book")
@@ -139,14 +156,14 @@ bookContainer.onclick = function (event) {
             let readStatus = bookCarditems[i].querySelector(".toggle")
             if (myLibrary[i].read === true) {
                 readStatus.textContent = "reading"
-                readStatus.classList.add()
+                readStatus.classList.add("reading")
             }
             else {
                 readStatus.textContent = "not reading"
+                readStatus.classList.add("not-reading")
             }
-        }
-     
-        //bookContainer.removeChild(event.target.closest(".book"))
-        //myLibrary.splice(parseInt(event.target.dataset.nr), parseInt(event.target.dataset.nr)+1)
+            
+        }   
     }
 }
+
